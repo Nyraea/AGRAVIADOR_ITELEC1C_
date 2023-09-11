@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Agraviador_ITELEC1C.props" />
+</Project>

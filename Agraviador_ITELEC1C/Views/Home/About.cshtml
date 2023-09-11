@@ -1,0 +1,34 @@
+﻿﻿
+@{
+    ViewData["Title"] = "About";
+}
+
+@{
+    DateOnly birthday = new DateOnly(2003, 03, 17);
+    var age = 0;
+    var name = "Mark Jearald S. Agraviador";
+    var educ = "Undergraduate in BS IT";
+    var contact = "(+63)9560562757";
+}
+<div class="mb-5">
+    <div class="row ">
+        <div class="col-5 bg-warning d-flex flex-column align-items-center">
+            <h2 class="text-light big mt-4 mb-4">About Me</h2>
+            <p class="headings text-light"><b>Name</b></p>
+            <p class="text-light value mb-5"><i>@name</i><p>
+            <p class="headings text-light"><b>Education</b></p>
+            <p class="text-light value mb-5"><i>@educ</i></p>
+            <p class="headings text-light"><b>Phone Number</b></p>
+            <p class="text-light value mb-5"><i>@contact</i></p>
+            <p class="headings text-light"><b>Age</b></p>
+                    @{
+                        age = DateOnly.FromDateTime(DateTime.Now).Year - birthday.Year;
+                    }
+            <p class="text-light value mb-5"><i> @age years old.</i></p>
+        </div>
+
+        <div class="col bg-warning bg-opacity-50 d-flex flex-column align-items-center">
+            <img class="border-1 rounded-pill w-75 h-75 my-auto bg-warning bg-opacity-25" src="@Url.Content("~/img/Agraviador.png")">
+        </div>
+    </div>
+</div>

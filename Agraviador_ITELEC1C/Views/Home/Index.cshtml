@@ -1,0 +1,27 @@
+﻿﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@{
+    DateTime date = DateTime.Now;
+}
+
+<div class="d-flex flex-column align-items-center">
+    <h1 class="headings display-4"> <b>Welcome to the home page!</b></h1>
+    @{
+        if (date.Hour < 12)
+        {
+            <p class="value"> It is <b>@TimeOnly.FromDateTime(DateTime.Now)</b> in the morning.</p>
+        }
+
+        else if (date.Hour >= 12 && date.Hour < 18)
+        {
+            <p class="value">It is <b>@TimeOnly.FromDateTime(DateTime.Now)</b> in the afternoon.</p>
+        }
+
+        else if (date.Hour >= 18)
+        {
+            <p class="value">It is <b>@TimeOnly.FromDateTime(DateTime.Now)</b> in the evening.</p>
+        }
+    }
+</div>
